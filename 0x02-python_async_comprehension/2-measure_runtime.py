@@ -6,10 +6,7 @@ run time for parallel comprehension
 
 import asyncio
 from time import time
-
-
-async def async_comprehension():
-    """Async comprehesion"""
+async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime():
