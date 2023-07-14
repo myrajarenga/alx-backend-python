@@ -9,6 +9,7 @@ wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
 def measure_time(n: int, max_delay: int) -> float:
+    """measure runtime in sec"""
     start_time = time.time()
 
     loop = asyncio.get_event_loop()
@@ -22,4 +23,3 @@ def measure_time(n: int, max_delay: int) -> float:
 n = 5
 max_delay = 3
 result = measure_time(n, max_delay)
-#print(f"Average time per iteration: {result} seconds")
