@@ -4,6 +4,7 @@
 
 import asyncio
 from typing import List
+from heapq import nsmallest
 task_wait_random = __import__('3-tasks').task_wait_random
 """uses task_wait_random"""
 
