@@ -12,6 +12,6 @@ from typing import Generator
 async def async_generator() -> [float, None, None]:
 
     """coroutine called async generator loop 10 times wait  sec"""
-    for _ in range(10):
+    for i in range(10):
         await asyncio.sleep(1)
-        yield random.randint(0, 10)
+        yield random.randint() * 10
