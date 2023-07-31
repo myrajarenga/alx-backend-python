@@ -29,7 +29,8 @@ class TestUtils(unittest.TestCase):
         ({}, ["a"], KeyError),
         ({"a": 1}, ["a", "b"], KeyError),
     ])
-    def test_access_nested_map_exception(self, nested_map, path, expected_exception):
+    def test_access_nested_map_exception(
+            self, nested_map, path, expected_exception):
         result = self._expected_exception_keyerror(nested_map, path)
         self.assertIsInstance(result, expected_exception)
         if expected_exception is KeyError:
@@ -43,21 +44,20 @@ class TestGetJson(unittest.TestCase):
     ])
     @patch('test_utils.requests.get')
     def test_get_json(self, test_url, test_payload, mock_requests_get):
-        # Configure the mock_requests_get to return a mock response
+        """Configure the mock_requests_get
+        to return a mock response
+        """
         mock_response = Mock()
         mock_response.json.return_value = test_payload
         mock_requests_get.return_value = mock_response
 
-        # Call the get_json function
+        """" Call the get_json function"""
         result = get_json(test_url)
 
-        # Assert that the mocked get method was called exactly once with the test_url
         mock_requests_get.assert_called_once_with(test_url)
 
-        # Assert that the output of get_json is equal to test_payload
         self.assertEqual(result, test_payload)
 
 
 if __name__ == "__main__":
     unittest.main()
-
