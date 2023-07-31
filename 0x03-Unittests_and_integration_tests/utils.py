@@ -18,7 +18,7 @@ __all__ = [
 ]
 
 
-def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
+def access_nested_map(nested_map: Mapping[str, Any], path: Sequence[str]) -> Any:
     """Access nested map with key path.
     Parameters
     ----------
@@ -40,7 +40,7 @@ def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
     return nested_map
 
 
-def get_json(url: str) -> Dict:
+def get_json(url: str) -> Dict [str, Any]:
     """Get JSON from remote URL.
     """
     response = requests.get(url)
